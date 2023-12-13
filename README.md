@@ -2,6 +2,7 @@
 
 This is a  client REST API.  
 A Node.js and Express.js powered application that allow CRUD operations on users data by sending an HTTP requests to the server.
+In my project the server is the local host.
 The users data stored in JSON file and contains the following details : name, age and gender.
 
 
