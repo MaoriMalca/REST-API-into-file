@@ -7,9 +7,9 @@ The users data stored in JSON file and contains the following details : name, ag
 
 # Technologies used
 
-Node.js
-Express.js
-Postman
+-Node.js
+-Express.js
+-Postman
 
 
 # Prerequisites
@@ -27,7 +27,7 @@ For using my project, ensure you have met the following requirements:
 
 Clone the repository:
 ```
-git clone https://github.com/MaoriMalca/MaoriMalca/REST-API-into-file .git
+git clone https://github.com/MaoriMalca/MaoriMalca/REST-API-into-file.git
 ```
 Navigate to the project directory
 ```
@@ -39,7 +39,7 @@ npm install
 ```
 
 
-# Usage:
+# Usage
 
 ### Runnig the server:
 
@@ -60,6 +60,10 @@ Example (on Postman):
 ```
 POST https://localhost:5000/api/
 ```
+Required body params: 
+ `name=[string]`
+ `age=[number]`
+ `gender=[string]`
 
 #### Retrieve all the users data from file:
 
@@ -78,7 +82,11 @@ Example (on Postman):
 ```
 PUT https://localhost:5000/api/<name>
 ```
-
+Required body params(new data): 
+ `name=[string]`
+ `age=[number]`
+ `gender=[string]`
+ 
 #### Delete specific user data from file:
 
 ```DELETE/api/:name ```
