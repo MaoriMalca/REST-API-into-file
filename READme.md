@@ -41,24 +41,51 @@ npm install
 
 # Usage:
 
-## Runnig the server:
+### Runnig the server:
 
 start the sever:
 ```
 npm start
 ```
-##Connect to the client API using Postman on port 5000.
+### Connect to the client API using Postman on port 5000.
 
 
 # API endpoints:
 
-#### Retrieve all the users data from the file:
+#### Add new user data to file:
+
+```POST/api/ ```
+		
+Example (on Postman):	
+```
+POST https://localhost:5000/api/
+```
+
+#### Retrieve all the users data from file:
 
 ```GET/api ```
 		
 Example (on Postman):	
 ```
-curl https://localhost:5000/api/
+GET https://localhost:5000/api/
+```
+
+#### Update specific user data from file:
+
+```PUT/api/:name ```
+		
+Example (on Postman):	
+```
+PUT https://localhost:5000/api/<name>
+```
+
+#### Delete specific user data from file:
+
+```DELETE/api/:name ```
+		
+Example (on Postman):	
+```
+PUT https://localhost:5000/api/<name>
 ```
 
 
