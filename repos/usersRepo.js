@@ -1,129 +1,102 @@
-let fs = require('fs');
+let fsMod = require('fs');
+
 const { stringify } = require('querystring');
 
 let FILE_PATH = './assets/users.json';
 
-let usersRepo=
+let usersRepo =
 {
-    get:function(resolve, reject)
-    {
-        fs.readFile(FILE_PATH, function(error, data)
-        {
-            if(error)
-            {
+    get: function (resolve, reject) {
+        fsMod.readFile(FILE_PATH, function (error, data) {
+            if (error) {
                 reject(error);
             }
 
-            else
-            {
+            else {
                 resolve(JSON.parse(data));
             }
-        })               
+        })
     },
-    insert:function(user, resolve, reject)
-    {
-        fs.readFile(FILE_PATH, function(error, data)
-        {
-            if(error)
-            {
+    insert: function (user, resolve, reject) {
+        fsMod.readFile(FILE_PATH, function (error, data) {
+            if (error) {
                 reject(error);
             }
 
-            else
-            {
+            else {
                 let usersArr = JSON.parse(data);
 
-                if(user)
-                {
+                if (user) {
                     usersArr.push(user);
                 }
 
-                fs.writeFile(FILE_PATH, JSON.stringify(usersArr), function(error)
-                {
-                    if(error)
-                    {
+                fsMod.writeFile(FILE_PATH, JSON.stringify(usersArr), function (error) {
+                    if (error) {
                         reject(error);
                     }
 
-                    else
-                    {
+                    else {
                         resolve(user);
                     }
-                });  
+                });
             }
-        })       
+        })
     },
-    update:function(userName, newUserName, resolve, reject)
-    {
-        fs.readFile(FILE_PATH, function(error, data)
-        {
-            if(error)
-            {
+    update: function (userName, newUserName, resolve, reject) {
+        fsMod.readFile(FILE_PATH, function (error, data) {
+            if (error) {
                 reject(error);
             }
 
-            else
-            {
+            else {
                 let usersArr = JSON.parse(data);
                 let user = usersArr.find((u) => u.name == userName);
                 Object.assign(user, newUserName);
 
-                fs.writeFile(FILE_PATH, JSON.stringify(usersArr), function(error)
-                {
-                    if(error)
-                    {
+                fsMod.writeFile(FILE_PATH, JSON.stringify(usersArr), function (error) {
+                    if (error) {
                         reject(error);
                     }
 
-                    else
-                    {
+                    else {
                         resolve(user);
                     }
-                });  
+                });
             }
-        }) 
+        })
     },
-    delete:function(userName, resolve, reject)
-    {
-        fs.readFile(FILE_PATH, function(error, data)
-        {
-            if(error)
-            {
+    delete: function (userName, resolve, reject) {
+        fsMod.readFile(FILE_PATH, function (error, data) {
+            if (error) {
                 reject(error);
             }
 
-            else
-            {
+            else {
                 let usersArr = JSON.parse(data);
                 let index = usersArr.findIndex((u) => u.name == userName);
-                
-                if(index > -1)
-                {
+
+                if (index > -1) {
                     usersArr.splice(index, 1);
                 }
 
-                else
-                {
+                else {
                     let ex = new Error("user not found");
                     reject(ex);
                     return;
                 }
 
-                fs.writeFile(FILE_PATH, JSON.stringify(usersArr), function(error)
-                {
-                    if(error)
-                    {
+                fsMod.writeFile(FILE_PATH, JSON.stringify(usersArr), function (error) {
+                    if (error) {
                         reject(error);
                     }
 
-                    else
-                    {``
+                    else {
                         resolve();
                     }
-                });  
+                });
             }
-        }) 
-    }            
+        })
+    }
 }
 
 module.exports = usersRepo;
