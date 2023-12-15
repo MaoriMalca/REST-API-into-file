@@ -1,7 +1,7 @@
 # REST API FOR CRUD OPERATIONS
 
-This is a project made in order to apply topics I recently learned about building REST APIs with JavaScript and Node.js.
-In my project,using REST API, I implemented CRUD operations on users data by sending an HTTP requests to the server.
+This is a project made in order to apply topics I've been recently learning about building REST APIs with JavaScript and Node.js.
+In my project, using REST API, I implemented CRUD operations on users data by sending an HTTP requests to the server.
 The users data stored in JSON file and contains the following details : name, age and gender. (See the json file with the users array in the folder 'users').
 In my project the server is local.
 
@@ -50,8 +50,8 @@ npm start
 ```
 If the server is running successfully, you will get the following output:
 
-```
-Server is running on port 5000
+```bash
+app running on http://localhost:5000
 ``````
 
 ### Connect to the client API using Postman on port 5000.
@@ -75,7 +75,7 @@ Required body params:
 
 #### Retrieve all the users data from file:
 
-```GET/api ```
+```GET/api/ ```
 		
 Example (on Postman):	
 ```
@@ -94,7 +94,7 @@ Required body params(new data):
  `name=[string]`
  `age=[number]`
  `gender=[string]`
- 
+
  
 #### Delete specific user data (based on 'name' filed) from file:
 
@@ -102,7 +102,7 @@ Required body params(new data):
 		
 Example (on Postman):	
 ```
-PUT https://localhost:5000/api/<name>
+DELETE https://localhost:5000/api/<name>
 ```
 
 
