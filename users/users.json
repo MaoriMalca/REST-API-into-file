@@ -5,13 +5,13 @@
         "gender": "male"
     },
     {
-        "name": "New2",
-        "age": 54,
+        "name": "Maori",
+        "age": 27,
         "gender": "female"
     },
     {
         "name": "Yael",
-        "age": 27,
+        "age": 42,
         "gender": "female"
     }
 ]

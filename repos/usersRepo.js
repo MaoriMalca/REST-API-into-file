@@ -2,7 +2,7 @@ let fsMod = require('fs');
 
 const { stringify } = require('querystring');
 
-let FILE_PATH = './assets/users.json';
+let FILE_PATH = './users/users.json';
 
 let usersRepo =
 {
