@@ -74,5 +74,5 @@ routerMod.delete('/:name', function (req, res, next) {
 });
 
 app.listen(5000, function () {
-    console.log("app running on http://localhost:5000".rainbow);
+    console.log("app running on http://localhost:5000");
 });

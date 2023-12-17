@@ -50,7 +50,7 @@ npm start
 ```
 If the server is running successfully, you will get the following output:
 
-```bash
+```
 app running on http://localhost:5000
 ``````
 
@@ -104,9 +104,3 @@ Example (on Postman):
 ```
 DELETE https://localhost:5000/api/<name>
 ```
-
-
-
-
-
-
