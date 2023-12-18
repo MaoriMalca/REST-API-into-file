@@ -17,7 +17,25 @@ let usersRepo =
             }
         })
     },
-    insert: function (user, resolve, reject) {
+    getUserWeather: async function (userName, resolve, reject) {
+        fsMod.readFile(FILE_PATH, function (error, data) {
+            if (error) {
+                reject(error);
+            }
+
+            else {
+                let usersArr = JSON.parse(data);
+                let user = usersArr.find((u) => u.name == userName);
+                if (user) {
+                    resolve(user);
+                }
+                else {
+                    reject('User not found');
+                }
+            }
+        })
+    },
+    insert: function (userName, resolve, reject) {
         fsMod.readFile(FILE_PATH, function (error, data) {
             if (error) {
                 reject(error);

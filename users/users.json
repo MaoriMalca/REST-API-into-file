@@ -2,16 +2,19 @@
     {
         "name": "Jhon",
         "age": 36,
-        "gender": "male"
+        "gender": "male",
+        "city": "London"
     },
     {
         "name": "Maori",
         "age": 27,
-        "gender": "female"
+        "gender": "female",
+        "city": "Haifa"
     },
     {
         "name": "Yael",
         "age": 42,
-        "gender": "female"
+        "gender": "female",
+        "city": "Jerusalem"
     }
 ]

@@ -6,6 +6,10 @@ let routerMod = expressMod.Router();
 
 let usersRepo = require('./repos/usersRepo');
 
+let axiosMod = require('axios');
+
+let WEATHER_API_KEY = 'cfadc03f13974489873103026231812';
+
 app.use(expressMod.json());
 
 app.use('/api', routerMod);
@@ -23,7 +27,35 @@ routerMod.get('/', function (req, res, next) {
     }, function (err) {
         next(err);
     });
+});
 
+// get specific user's weather - by city (GET htpp request)
+routerMod.get('/:name', async function (req, res, next) {
+    usersRepo.getUserWeather(req.params.name, async function (data) {
+        try {
+            // Make a GET request to the external weather API
+            const response = await axiosMod.get(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${data.city}`);
+
+            // Extract relevant data from the response
+            const weatherData = {
+                temperature: response.data.current.temp_c,
+                condition: response.data.current.condition.text,
+            };
+            res.json(
+                {
+                    "status": 200,
+                    "city": data.city,
+                    "temperature": weatherData.temperature,
+                    "message": weatherData.condition
+                });
+        }
+        catch (error) {
+            console.error('Error fetching weather data:', error.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }, function (err) {
+        next(err);
+    });
 });
 
 //create user(POST htpp request)
@@ -72,6 +104,7 @@ routerMod.delete('/:name', function (req, res, next) {
     });
 
 });
+
 
 app.listen(5000, function () {
     console.log("app running on http://localhost:5000");
