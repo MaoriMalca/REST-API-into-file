@@ -1,27 +1,16 @@
-# REST API FOR CRUD OPERATIONS
+# REST API and HTTP PROTOCOL FOR implementing CRUD OPERATIONS into JSON file
 
-This is a project made in order to apply topics I've been recently learning about building REST APIs with JavaScript and Node.js.
-In my project, using REST API, I implemented CRUD operations on users data by sending an HTTP requests to the server.
-The users data stored in JSON file and contains the following details : name, age and gender. (See the json file with the users array in the folder 'users').
-In my project the server is local.
+# project's objectives:
 
+phase 1:
+- learn and implement REST API and HTTP protocol
+- getting familiar with backend technologies like Node and Express
+- using package management technologies like NPM 
+- learn testing tools like Postman 
+- all the while practicing version control with git
 
-# Technologies used
-
--Node.js
--Express.js
--Postman
-
-
-# Prerequisites
-
-For using my project, ensure you have met the following requirements:
-
-1. Node.js and npm 
-2. Express.js - Node.js web application framework.
-3. git - Clone the project repository.
-4. Text editor or IDE - View the project's source code. 
-5. Postman - Test and interact with the API endpoints.
+phase 2:
+- fetch data from external APIs in Node.js using Axios lib
 
 
 # Installation
@@ -38,7 +27,6 @@ Install dependencies:
 ```
 npm install
 ```
-
 
 # Usage
 
@@ -65,7 +53,7 @@ app running on http://localhost:5000
 		
 Example (on Postman):	
 ```
-POST https://localhost:5000/api/
+POST http://localhost:5000/api/
 ```
 Required body params: 
  `name=[string]`
@@ -79,7 +67,7 @@ Required body params:
 		
 Example (on Postman):	
 ```
-GET https://localhost:5000/api/
+GET http://localhost:5000/api/
 ```
 
 #### Update specific user data (based on 'name' filed) from file:
@@ -88,7 +76,7 @@ GET https://localhost:5000/api/
 		
 Example (on Postman):	
 ```
-PUT https://localhost:5000/api/<name>
+PUT http://localhost:5000/api/<name>
 ```
 Required body params(new data): 
  `name=[string]`
@@ -102,7 +90,7 @@ Required body params(new data):
 		
 Example (on Postman):	
 ```
-DELETE https://localhost:5000/api/<name>
+DELETE http://localhost:5000/api/<name>
 ```
 
 
